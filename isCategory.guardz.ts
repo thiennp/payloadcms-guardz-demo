@@ -1,5 +1,5 @@
-import type { Category } from './payload-types';
-import type { TypeGuardFnConfig } from 'guardz';
+import type { Category } from "./payload-types";
+import type { TypeGuardFnConfig } from "guardz";
 import {
   isEqualTo,
   isNullOr,
@@ -7,7 +7,7 @@ import {
   isString,
   isType,
   isUndefinedOr,
-} from 'guardz';
+} from "guardz";
 
 export function isCategory(
   value: unknown,
@@ -21,10 +21,10 @@ export function isCategory(
     parent: isUndefinedOr(
       isNullOr(
         isType<{
-          relationTo: 'categories';
+          relationTo: "categories";
           value: string | Category;
         }>({
-          relationTo: isEqualTo('categories'),
+          relationTo: isEqualTo("categories"),
           value: isOneOfTypes<Category | string>(isCategory, isString),
         }),
       ),

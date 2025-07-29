@@ -7,14 +7,15 @@
     "generate:types": "echo 'Simulating PayloadCMS type generation'",
     "generate:guards": "guardz-generator generate payload-types.ts",
     "build": "npm run generate:types && npm run generate:guards",
-    "test": "ts-node test-integration.ts"
+    "test": "ts-node --compiler-options '{\"module\": \"commonjs\"}' test-integration.ts"
   },
   "dependencies": {
     "guardz": "^1.11.6",
-    "guardz-generator": "^1.11.6"
+    "guardz-generator": "^1.11.6",
+    "prettier": "^3.6.2"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "ts-node": "^10.9.0"
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
   }
-} 
+}

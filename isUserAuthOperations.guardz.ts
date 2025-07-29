@@ -1,6 +1,6 @@
-import type { UserAuthOperations } from './payload-types';
-import type { TypeGuardFn } from 'guardz';
-import { isString, isType } from 'guardz';
+import type { UserAuthOperations } from "./payload-types";
+import type { TypeGuardFn } from "guardz";
+import { isString, isType } from "guardz";
 
 export const isUserAuthOperations: TypeGuardFn<UserAuthOperations> =
   isType<UserAuthOperations>({

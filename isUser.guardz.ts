@@ -1,5 +1,5 @@
-import type { User } from './payload-types';
-import type { TypeGuardFn } from 'guardz';
+import type { User } from "./payload-types";
+import type { TypeGuardFn } from "guardz";
 import {
   isArrayWithEachItem,
   isNullOr,
@@ -8,18 +8,18 @@ import {
   isString,
   isType,
   isUndefinedOr,
-} from 'guardz';
+} from "guardz";
 
 export const isUser: TypeGuardFn<User> = isType<User>({
   id: isString,
   localizedField: isString,
   roles: isArrayWithEachItem(
-    isOneOf<'admin' | 'editor' | 'moderator' | 'user' | 'viewer'>(
-      'admin',
-      'editor',
-      'moderator',
-      'user',
-      'viewer',
+    isOneOf<"admin" | "editor" | "moderator" | "user" | "viewer">(
+      "admin",
+      "editor",
+      "moderator",
+      "user",
+      "viewer",
     ),
   ),
   updatedAt: isString,

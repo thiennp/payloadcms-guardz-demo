@@ -1,5 +1,5 @@
-import type { User, Post } from './payload-types';
-import type { TypeGuardFn } from 'guardz';
+import type { User, Post } from "./payload-types";
+import type { TypeGuardFn } from "guardz";
 import {
   isEqualTo,
   isNullOr,
@@ -8,24 +8,24 @@ import {
   isString,
   isType,
   isUndefinedOr,
-} from 'guardz';
-import { isUser } from './isUser.guardz';
+} from "guardz";
+import { isUser } from "./isUser.guardz";
 
 export const isPost: TypeGuardFn<Post> = isType<Post>({
   id: isString,
   title: isString,
   content: isString,
   author: isType<{
-    relationTo: 'users';
+    relationTo: "users";
     value: string | User;
   }>({
-    relationTo: isEqualTo('users'),
+    relationTo: isEqualTo("users"),
     value: isOneOfTypes<string | User>(isString, isUser),
   }),
-  status: isOneOf<'archived' | 'draft' | 'published'>(
-    'archived',
-    'draft',
-    'published',
+  status: isOneOf<"archived" | "draft" | "published">(
+    "archived",
+    "draft",
+    "published",
   ),
   publishedAt: isUndefinedOr(isNullOr(isString)),
   createdAt: isString,
