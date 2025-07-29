@@ -6,8 +6,7 @@
   "scripts": {
     "generate:types": "echo 'Simulating PayloadCMS type generation'",
     "generate:guards": "guardz-generator generate payload-types.ts",
-    "build": "npm run generate:types && npm run generate:guards",
-    "test": "ts-node --compiler-options '{\"module\": \"commonjs\"}' test-integration.ts"
+    "build": "npm run generate:types && npm run generate:guards"
   },
   "dependencies": {
     "guardz": "^1.11.6",
@@ -15,7 +14,10 @@
     "prettier": "^3.6.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "eslint": "^9.32.0",
     "ts-node": "^10.9.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.38.0"
   }
 }
